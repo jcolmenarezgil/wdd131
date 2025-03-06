@@ -57,10 +57,15 @@ h1 b {
 }
 
 nav a {
+    padding: 10px;
     text-decoration: none;
     font-family: var(--headline);
     font-weight: 500;
     color: var(--white-tone);
+}
+
+nav a:hover {
+    background-color: var(--highlighted);
 }
 
 
