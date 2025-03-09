@@ -75,6 +75,8 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap: 15px;
+    max-width: 2000px;
+    min-width: 100vw;
 }
 
 .card {
@@ -83,7 +85,7 @@ main {
     margin: 15px 10px 15px 10px;
     display: grid;
     grid-template-rows: 50px repeat(3, auto);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 0.5fr);
     gap: 10px;
     font-family: var(--content);
 }
@@ -109,7 +111,7 @@ main {
     grid-column: span 2;
 }
 
-.card h2 {
+.card h3 {
     order: 4;
     grid-column: span 2;
     text-align: center;
