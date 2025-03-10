@@ -1,0 +1,28 @@
+:root {
+    --body-text: "Roboto", sans-serif;
+    --faint-border: #E3F2FD;
+    --blueish-background: #B2EBF2;
+}
+
+body {
+    font-family: var(--body-text);
+}
+
+header, main, footer {
+    max-width: 640px;
+    margin: 1rem auto;
+    border: 1rem solid var(--faint-border);
+    padding: 1em;
+    background-color: var(--blueish-background);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem; 
+}
+
+section {
+    padding: 1rem;
+    background-color: #fff;
+}
