@@ -1,0 +1,91 @@
+/* https: //coolors.co/ffff00-0000a0-ff1919-201e1f-50b2c0 */
+:root {
+    
+    --secondary-color: #0000A0;
+    --highlighted: #FF1919;
+    --complement: #50B2C0;
+    --black-tone: #201E1F;
+    --white-tone: #fff;
+    --titled: "Noto Sans", sans-serif;
+    --content: "Roboto Condensed", sans-serif;
+
+    --padding-1: 1rem;
+    --font-size1: 1.4em;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--titled);
+    text-align: center;
+}
+
+p, li, table {
+    font-family: var(--content);
+    font-size: var(--font-size1);
+}
+
+header {
+    background-color: var(--highlighted);
+    padding: var(--padding-1);
+    color: var(--black-tone);
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.hero {
+    width: 100%;
+    height: auto;
+}
+
+.hero img {
+    object-fit: fill;
+    width: 100%;
+    height: auto;
+}
+
+.data, .weather {
+    display: grid;
+    justify-content: center;
+}
+
+.weather img {
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+}
+
+table {
+    padding: var(--padding-1);
+}
+
+table tr td:first-child {
+    text-align: right;
+}
+
+table tr td:nth-child(2) {
+    padding-left: var(--padding-1);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white-tone);
+    padding: var(--padding-1);
+    text-align: center;
+}

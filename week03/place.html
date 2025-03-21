@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Page | WDD 131 - Jose D. Colmenarez G.</title>
+    <meta name="Description"
+        content="A Country Page Example Using a Wireframe with Javascript Data and CSS Responsive created by Jose David Colmenarez Gil, for WDD 131 - Dynamic Web Fundamentals.">
+    <meta name="author" content="Jose David Colmenarez Gil">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place.large.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Venezuela</h1>
+    </header>
+    <main>
+        <div class="hero">
+            <picture>
+                <source media="(min-width: 1000px)" srcset="images/ara-chloroptera-large.webp">
+                <source media="(min-width: 500px)" srcset="images/ara-chloroptera-medium.webp">
+                <img src="images/ara-chloroptera-small.webp"
+                    alt="Green-winged Macaw or Red-and-green Macaw (Ara chloropterus) head and neck details. Author Tom Woodward">
+            </picture>
+        </div>
+        <section class="data">
+            <h2>Data</h2>
+            <table class="country-info">
+                <tr>
+                    <td><b>Area:</b></td>
+                    <td>916 445 km<sup>2</sup></td>
+                </tr>
+                <tr>
+                    <td><b>Population:</b></td>
+                    <td>28,473,138 </td>
+                </tr>
+                <tr>
+                    <td><b>Capital:</b></td>
+                    <td>Caracas</td>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+                    <td><b>Languages:</b></td>
+                    <td>Castellano.</td>
+                </tr>
+                <tr>
+                    <td><b>Currency:</b></td>
+                    <td>VEF</td>
+                </tr>
+                <tr>
+                    <td><b>Time Zone:</b></td>
+                    <td>UTC-4</td>
+                </tr>
+                <tr>
+                    <td><b>Calling Code:</b></td>
+                    <td>+58</td>
+                </tr>
+                <tr>
+                    <td><b>Internet TLD:</b></td>
+                    <td>.ve</td>
+                </tr>
+            </table>
+        </section>
+        <section class="weather">
+            <h2>Weather</h2>
+            <img src="images/weather-tropic.svg" alt="weather-tropic-svg-icon" width="60" height="auto">
+            <table class="weather-info">
+                <tr>
+                    <td><b>Temperature:</b></td>
+                    <td>10 &deg;C</td>
+                </tr>
+                <tr>
+                    <td><b>Conditions:</b></td>
+                    <td>Warm and Rainy</td>
+                </tr>
+                <tr>
+                    <td><b>Wind:</b></td>
+                    <td>5 km/h</td>
+                </tr>
+                <tr>
+                    <td><b>Wind Chill:</b></td>
+                    <td><div id="calculateWindChill"></div></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🎨 Jose D. Colmenarez G. 🎮 Carabobo, Venezuela. </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

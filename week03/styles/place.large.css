@@ -1,0 +1,52 @@
+:root {
+    --black-tone: #000;
+    --white-tone: #fff;
+    --primary-color: #FFFF00;
+    --padding-0pt5: 0.5rem;
+    --border-radius: 2px;
+}
+
+@media (min-width: 32.5em) {}
+
+@media (min-width: 64em) {
+    main {
+        position: relative;
+    }
+
+    section {
+        position: absolute;
+        background-color: var(--white-tone);
+    }
+
+    section h2 {
+        background-color: var(--primary-color);
+        padding: var(--padding-0pt5);
+        margin: 10px 15px 0px -15px;
+        border-radius: var(--border-radius);
+    }
+
+    section img {
+        display: none;
+    }
+
+    .weather h2::after {
+        content: url("../images/weather-tropic.svg");
+        position: absolute;
+        top: 0px;
+        left: 60%;
+        margin-left: -5px;
+        width: 60px;
+        height: auto;
+        margin-bottom: -15px;
+    }
+
+    .data {
+        top: 2em;
+        left: 10px;
+    }
+
+    .weather {
+        bottom: 2em;
+        right: 10px;
+    }
+}
