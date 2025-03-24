@@ -30,7 +30,7 @@
     }
 
     .weather h2::after {
-        content: url("../images/weather-tropic.svg");
+        content: url("../images/weather.svg");
         position: absolute;
         top: 0px;
         left: 60%;
