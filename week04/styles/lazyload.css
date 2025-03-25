@@ -1,0 +1,41 @@
+:root {
+    --primary-color: #191970;
+    --secondary-color: #D3D3D3;
+    --black-tone: #000;
+    --white-tone: #fff;
+    --headline: "Roboto", sans-serif;
+    --content: "Montserrat", sans-serif;
+    --highlighted: #FF8C00;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: underline;
+    text-decoration-color: var(--highlighted);
+}
+
+h1 {
+    font-family: var(--headline);
+    font-weight: 400;
+    padding: 2rem
+}
+
+p {
+    font-family: var(--content);
+    padding: 10px;
+}
+
+img { display: block;}
+
+footer {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    grid-column: 1 / 4;
+    color: var(--white-tone);
+    background-color: var(--primary-color);
+}

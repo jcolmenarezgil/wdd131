@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazyload Page | WDD 131 - Jose D. Colmenarez G. </title>
+    <meta name="description"
+        content="Page about Venezuela, summary about data and weather of this country, using Javascript, Html and CSS for WDD 131 - Dynamic Web Fundamentals.">
+    <meta name="author" content="Jose David Colmenarez Gil">
+    <link rel="stylesheet" href="styles/lazyload.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="scripts/lazyload.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Lazy Load</h1>
+        <picture>
+            <img src="https://placecats.com/400/600" alt="Placeholder Kitten Image" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://placecats.com/400/700" alt="Placeholder Kitten Image2" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://placecats.com/400/800" alt="Placeholder Kitten Image3" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://placecats.com/400/650" alt="Placeholder Kitten Image4" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://placecats.com/400/750" alt="Placeholder Kitten Image5" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://placecats.com/400/850" alt="Placeholder Kitten Image6" loading="lazy" width="400" height="600">
+        </picture>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🎨 Jose D. Colmenarez G. 🎮 Carabobo, Venezuela. </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
