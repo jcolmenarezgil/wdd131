@@ -1,0 +1,145 @@
+:root {
+    /* https: //coolors.co/adfcf9-89a894-4b644a-648de5-191970 */
+    --primary-color: #191970;
+    --secondary-color: #648de5;
+    --background-contrast: #dedede;
+    --black-tone: #000;
+    --white-tone: #fff;
+    --headline: "Roboto", sans-serif;
+    --content: "Montserrat", sans-serif;
+    --highlighted: #adfcf9;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: var(--headline);
+    font-weight: 400;
+    padding: 1rem;
+    color: var(--white-tone)
+}
+
+h2 {
+    font-family: var(--headline);
+    font-weight: 400;
+    padding: 1rem;
+    grid-column: span 3;
+}
+
+h3 {
+    font-family: var(--headline);
+    font-weight: 600;
+    padding: 1rem;
+    grid-column: span 3;
+}
+
+p {
+    font-family: var(--content);
+}
+
+header {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-titled {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: none;
+    flex-direction: column;
+    font-family: var(--content);
+    font-weight: 600;
+}
+
+.label {
+    font-weight: 600;
+}
+
+.open {
+    display: flex;
+}
+
+.menu:hover {
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    color: var(--white-tone);
+    font-size: 2.3em !important;
+    margin-right: 1em;
+}
+
+nav a {
+    padding: 1rem;
+    color: var(--black-tone);
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: var(--secondary-color)
+}
+
+nav a:hover {
+    background-color: var(--highlighted);
+    color: var(--black-tone);
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.res-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3.5rem;
+    place-items: center;
+    margin-bottom: 1em;
+}
+
+section {
+    font-family: var(--content);
+    color: var(--black-tone);
+    font-size: 0.8rem;
+    background-color: var(--background-contrast);
+    padding: 0.8rem;
+    border: 1px solid #dedede;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+
+section img {
+    width: 280px;
+    height: 180px;
+    box-shadow: 0 0 10px #000;
+}
+
+footer {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    grid-column: 1 / 4;
+    color: var(--white-tone);
+    background-color: var(--primary-color);
+}
+
+footer p {
+    padding: 10px;
+}
