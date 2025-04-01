@@ -37,7 +37,8 @@ p,
 span,
 a {
     font-family: var(--font-body);
-    padding: 10px;;
+    padding: 10px;
+    ;
 }
 
 body {
@@ -90,9 +91,41 @@ header {
     font-size: 1.5em;
     color: var(--color-black);
 }
+
 .font-example-body {
     font-family: var(--font-body);
     font-size: 1em;
     color: var(--color-black);
     margin-bottom: 10px;
+}
+
+.imagen-contenedor {
+    position: relative;
+    width: 400px;
+    height: 320px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.imagen-contenedor img {
+    display: block;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 10px;
+}
+
+#mostrar-mas {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
 }
