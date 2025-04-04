@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form | Jose D. Colmenarez</title>
+    <meta name="description"
+        content="Product review form designed in html, css, and javascript by Jose Colmenarez for WDD131 Dynamic Web Fundamentals">
+    <meta name="author" content="Jose David Colmenarez Gil">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/form-large.css">
+    <link rel="icon" type="image/x-icon" href="/images/review.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand&display=swap"
+        rel="stylesheet">
+    <script src="scripts/form.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Customer Review</h1>
+    </header>
+    <main>
+        <h2>Product Review</h2>
+        <form action="review.html" method="get">
+            <fieldset>
+                <legend>
+                    Product description
+                </legend>
+
+                <div class="form-group">
+                    <label for="productId"> Product Name
+                    </label>
+                    <select name="productId" id="productId" required>
+                        <option value="" disabled selected>Select a Product...</option>
+                    </select>
+                    <img id="productIMG" src="" alt="" title="">
+                </div>
+                <div class="form-group">
+                    <p class="rating">User Rating*</p>
+                    <div class="star-rating">
+                        <input type="radio" name="stars" id="star-a" value="5" required />
+                        <label for="star-a"></label>
+
+                        <input type="radio" name="stars" id="star-b" value="4" required />
+                        <label for="star-b"></label>
+
+                        <input type="radio" name="stars" id="star-c" value="3" required />
+                        <label for="star-c"></label>
+
+                        <input type="radio" name="stars" id="star-d" value="2" required />
+                        <label for="star-d"></label>
+
+                        <input type="radio" name="stars" id="star-e" value="1" required />
+                        <label for="star-e"></label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Initial Experience</legend>
+                <div class="form-group">
+                    <label for="dateInstallDate"> Date of Installation: </label>
+                    <input type="date" name="dateInstallDate" id="dateInstallDate" required>
+                </div>
+                <div class="form-group">
+                    <div class="labeled"> Wich features did you find useful in the product?
+                        <i>&#40;Check all that apply&#41;</i>
+                        <label class="features" for="durability">
+                            <input type="checkbox" name="durability" id="durability" value="durability"> Durability
+                        </label>
+                        <label class="features" for="ease-of-use">
+                            <input type="checkbox" name="ease-of-use" id="ease-of-use" value="ease-of-use"> Ease of Use
+                        </label>
+                        <label class="features" for="performance">
+                            <input type="checkbox" name="performance" id="performance" value="performance"> Performance
+                        </label>
+                        <label class="features" for="design">
+                            <input type="checkbox" name="design" id="design" value="design"> Design
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Review</legend>
+                <div class="form-group">
+                    <label for="written-review"> Written Review: </label>
+                    <textarea name="written-review" id="written-review" rows="10" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="userName"> User name: </label>
+                    <input type="text" name="userName" id="userName">
+                </div>
+            </fieldset>
+            <div class="form-submit">
+                <input type="submit" value="Save My Review">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <footer>
+            <p>&copy; <span id="currentyear"></span> 🎨 Jose D. Colmenarez G. 🎮 Carabobo, Venezuela. </p>
+            <p id="lastModified"></p>
+        </footer>
+    </footer>
+</body>
+
+</html>

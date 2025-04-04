@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #191970;
+    --secondary-color: #86eee5;
+    --black-tone: #000;
+    --white-tone: #fff;
+    --headline: "Playfair Display", serif;
+    --content: "Quicksand", sans-serif;
+    --form-radius: 4px;
+    --highlighted: #FF8C00;
+    --cursor: pointer;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input {
+    outline: 0;
+}
+
+input:focus {
+    outline: none !important;
+}
+
+a {
+    text-decoration: underline;
+    text-decoration-color: var(--highlighted);
+}
+
+p,
+span,
+li {
+    padding: 10px;
+    font-family: var(--content);
+}
+
+h1 {
+    font-family: var(--headline);
+    color: var(--black-tone);
+    font-weight: 500;
+    padding: 2rem;
+    border-bottom: 4px solid var(--highlighted);
+    margin-bottom: 3rem;
+}
+body {
+    background-color: #f7f7f7;
+}
+
+/* header */
+
+header {
+    background-color: var(--secondary-color);
+}
+
+/* main */
+
+main {
+    font-family: var(--content);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.feedback {
+    min-height: 450px;
+}
+
+h2 {
+    margin: 1rem;
+}
+
+form {
+    margin-bottom: 3rem;
+    background-color: var(--white-tone);
+}
+
+fieldset {
+    border: 1px solid #dedede;
+    margin: 1rem;
+    border-radius: 6px;
+}
+
+#productIMG {
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    padding: .75rem;
+    font-family: var(--content);
+    border-radius: var(--form-radius);
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 14px #dedede;
+    appearance: none;
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    margin: .37rem;
+}
+
+label:hover, 
+input[type="submit"]:hover {
+    cursor: var(--cursor);
+}
+
+.features {
+    flex-direction: row !important;
+    margin: 1rem;
+}
+
+.features input {
+    margin-right: .55rem;
+}
+
+.form-group:has(select[required]) label::after,
+.form-group:has(input[type="date"][required]) label::after,
+.form-group:has(textarea[required]) label::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+    font-size: 21px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.labeled {
+    margin: 1rem;
+}
+
+input[type="text"] {
+    margin-bottom: 1.3rem;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border-radius: var(--form-radius);
+    font-size: 14px;
+    font-family: var(--content);
+    outline: 0;
+    border: 0;
+    box-shadow: 1px 1px 14px #dedede;
+    background-color: var(--secondary-color);
+    color: var(--black-tone);
+    font-weight: 600;
+    margin: 2.3rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+
+/* use reverse flexbox to take advantage of flex-direction: reverse */
+.rating {
+    text-align: center;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 0px auto;
+    position: relative;
+}
+
+/* hide the inputs */
+.star-rating input {
+    display: none;
+}
+
+/* set properties of all labels */
+.star-rating>label {
+    width: 30px;
+    height: 30px;
+    font-family: Arial;
+    font-size: 30px;
+    transition: 0.2s ease;
+    color: orange;
+}
+
+/* give label a hover state */
+.star-rating label:hover {
+    color: #ff69b4;
+    transition: 0.2s ease;
+}
+
+.star-rating label:active::before {
+    transform: scale(1.1);
+}
+
+/* set shape of unselected label */
+.star-rating label::before {
+    content: '\2606';
+    position: absolute;
+    top: 0px;
+    line-height: 26px;
+}
+
+/* set full star shape for checked label and those that come after it */
+.star-rating input:checked~label:before {
+    content: '\2605';
+}
+
+@-moz-document url-prefix() {
+    .star-rating input:checked~label:before {
+        font-size: 36px;
+        line-height: 21px;
+    }
+}
+
+
+/* footer */
+
+footer {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    grid-column: 1 / 4;
+    color: var(--white-tone);
+    background-color: var(--primary-color);
+}
