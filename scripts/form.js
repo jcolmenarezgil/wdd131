@@ -1,5 +1,5 @@
 let productSelect = document.querySelector("#productId");
-let image = document.querySelector("#productIMG");
+let productIMGDiv = document.querySelector("#productIMG");
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedProductId = this.value;
         const selectedProduct = products.find(product => product.id === selectedProductId);
 
+        productIMGDiv.innerHTML = '';
+
         if(selectedProduct) {
-            image.src = `images/${selectedProduct.img}`;
-            image.alt = selectedProductId;
-            image.title = selectedProduct.name;
-        } else {
-            image.src = '';
-            image.alt = '';
-            image.title = '';
+            const imgElement = document.createElement('img');
+            imgElement.src = `images/${selectedProduct.img}`;
+            imgElement.alt = selectedProductId;
+            imgElement.title = selectedProduct.name;
+            productIMGDiv.appendChild(imgElement);
         }
     });
 });
