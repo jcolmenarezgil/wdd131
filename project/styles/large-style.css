@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #191970;
+    --secondary-color: #648de5;
+    --highlighted: #ff9710;
+    --border: #d3d0cb;
+    --black-tone: #1e2019;
+    --white-tone: #fff;
+    --headline: "Merriweather Sans", sans-serif;
+    --content: "Lato", sans-serif;
+    --cursor: pointer;
+}
+
+nav ul li a {
+    color: var(--black-tone);
+}
+
+@media (min-width: 64em) {
+    /* header */
+
+    header {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        width: 100%;
+        box-shadow: 1px 1px 14px #dedede;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        order: 0;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    nav ul li {
+        padding: 1rem;
+    }
+
+    nav ul li:hover {
+        cursor: var(--cursor);
+        background-color: var(--highlighted);
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo,
+    .call-number {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        order: 0;
+        padding: 1rem;
+    }
+
+    .logo-img {
+        width: 48px;
+        height: auto;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+/* section */
+    .offer, .offer div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
