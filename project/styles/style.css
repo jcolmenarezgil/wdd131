@@ -13,6 +13,7 @@
     --padding-1: 1.2rem;
     --radius: 16px;
     --margin-1: 1rem;
+    --margin-2: 1.8rem;
     --font-size-1: 1rem;
 }
 
@@ -34,8 +35,8 @@ h6 {
 
 p,
 span,
-a, 
-button, 
+a,
+button,
 legend,
 input[type="text"],
 label {
@@ -51,7 +52,8 @@ a {
 
 input[type="button"],
 input[type="radio"]:hover,
-button:hover {
+button:hover,
+.faq summary:hover {
     cursor: var(--cursor);
 }
 
@@ -74,11 +76,17 @@ li {
 /* form */
 
 .form-group:has(input[type="radio"]) label::after,
-.form-group:has(input[type="text"][required]) label::after {
+.form-group:has(input[type="text"][required]) label::after,
+.form-group:has(input[type="email"][required]) label::after {
     content: "*";
     color: red;
     margin-left: 5px;
     font-size: var(--font-size-1);
+}
+
+form.signup {
+    background-color: var(--white-tone);
+    box-shadow: 1px 1px 14px #000;
 }
 
 form {
@@ -86,12 +94,10 @@ form {
     align-items: center;
     flex-direction: column;
     border-radius: var(--radius);
-    background-color: var(--white-tone);
     margin: 0 auto;
     max-width: 400px;
     min-width: 380px;
     margin: var(--padding-1);
-    box-shadow: 1px 1px 14px #000;
 }
 
 form img {
@@ -113,7 +119,8 @@ input[type="radio"] {
     margin: var(--padding-1);
 }
 
-form input[type="text"] {
+form input[type="text"],
+form input[type="email"] {
     font-size: var(--font-size-1);
     font-family: var(--content);
     border: 1px solid var(--gray-tone);
@@ -141,22 +148,45 @@ form input[type="button"] {
 }
 
 @keyframes shake {
-    10%, 90% {
+
+    10%,
+    90% {
         transform: translate3d(-1px, 0, 0);
     }
 
-    20%, 80% {
+    20%,
+    80% {
         transform: translate3d(2px, 0, 0);
     }
 
-    30%, 50%, 70% {
+    30%,
+    50%,
+    70% {
         transform: translate3d(-4px, 0, 0);
     }
 
-    40%, 60% {
+    40%,
+    60% {
         transform: translate3d(4px, 0, 0);
     }
-    
+
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* header */
@@ -206,6 +236,7 @@ header {
 }
 
 /* section */
+
 .offer button {
     color: var(--black-tone);
     background-color: var(--highlighted);
@@ -228,15 +259,223 @@ header {
 /* section: invite-form */
 
 .invite-form {
-    background-color: var(--primary-color);
+    background-image: url(../images/background.webp);
+    background-blend-mode: multiply;
+    background-color: rgba(26, 26, 116, 0.9);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    background-size: cover;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     justify-items: center;
+    align-items: center;
+}
 
+.invite-form div p,
+.invite-form div h2 {
+    text-align: center;
+    padding: var(--padding-1);
 }
 
 .character {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.sprite {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sprite {
+    background-image: url(../images/programming.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    animation: floatAnimation 3s infinite alternate;
+}
+
+.sprite.css_webp {
+    background-position: 0 0;
+    width: 48px;
+    height: 54px;
+    justify-self: center;
+}
+
+.sprite.javascript_webp {
+    background-position: 0 -58px;
+    width: 48px;
+    height: 48px;
+    justify-self: left;
+}
+
+.sprite.typescript_webp {
+    background-position: 0 -110px;
+    width: 48px;
+    height: 48px;
+    justify-self: left;
+}
+
+.sprite.html5_webp {
+    background-position: 0 -162px;
+    width: 48px;
+    height: 54px;
+    justify-self: left;
+}
+
+.sprite.python_webp {
+    background-position: 0 -220px;
+    width: 48px;
+    height: 50px;
+    justify-self: left;
+}
+
+.sprite.swift_png {
+    background-position: 0 -274px;
+    width: 48px;
+    height: 51px;
+    justify-self: left;
+}
+
+.sprite.bashshell_webp {
+    background-position: 0 -329px;
+    width: 48px;
+    height: 54px;
+    justify-self: right;
+}
+
+.sprite.csharp_webp {
+    background-position: 0 -387px;
+    width: 48px;
+    height: 54px;
+    justify-self: center;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    max-width: 80%;
+}
+
+.main-content {
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+}
+
+.main-content p {
+    font-size: 1.2rem;
+}
+
+.connector {
+    display: none;
+}
+
+/* section:roadmap */
+
+.heading {
+    padding: var(--padding-1);
+    background-color: var(--secondary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.grid-roadmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3.5rem;
+    justify-items: center;
+}
+
+.path {
+    background-color: var(--white-tone);
+    max-width: 400px;
+    height: auto;
+    border: 1px solid var(--gray-tone);
+    border-radius: var(--radius);
+    padding: var(--padding-1);
+    box-shadow: 1px 1px 14px #dedede;
+}
+
+.path::before {
+    content: url(../images/mac-os-traffic-light.webp);
+    margin: -10px;
+}
+
+.path ul li {
+    font-family: var(--content);
+    padding: var(--padding-0);
+    font-size: 0.8em;
+}
+
+.path ul li::before {
+    content: "> ";
+}
+
+.path .topic-content {
+    background-color: var(--black-tone);
+    color: var(--white-tone);
+    border-radius: 6px;
+}
+
+.path ul li:hover {
+    cursor: progress;
+    color: var(--highlighted);
+}
+
+.path:hover {
+    background-color: var(--highlighted);
+}
+
+/* section: faq */
+
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--padding-1);
+    position: relative;
+
+}
+
+.faq h2 {
+    margin: 2.5rem 0;
+}
+
+.faq details {
+    font-family: var(--headline);
+    padding: var(--padding-1);
+    box-shadow: 1px 1px 14px #dedede;
+    margin-bottom: var(--margin-2);
+    border-radius: var(--radius);
+    z-index: 1;
+    background-color: var(--white-tone);
+}
+
+.faq details:hover {
+    background-color: var(--highlighted);
+}
+
+.faq details p {
+    text-indent: 1.5rem;
+    line-height: 1.6;
+}
+
+/* section: newsletters */
+
+.newsletters {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletters div h2 {
+    padding: var(--padding-1);
+}
+
+.newsletters img {
+    width: 100%;
+    height: auto;
+}
+
+form.news {
+    display: flex;
+    flex-direction: column;
 }

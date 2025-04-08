@@ -43,11 +43,11 @@
             <h2>Spring Semester Start Offer</h2>
             <div>
                 <div class="timer"></div>
-                <button>Enroll Now</button>
+                <button id="call-to-action">Enroll Now</button>
             </div>
         </section>
         <section class="invite-form">
-            <form action="form.html" method="get">
+            <form class="signup" action="form.html" method="get">
                 <h2>Registration Form</h2>
                 <fieldset>
                     <legend>
@@ -61,7 +61,6 @@
                             <input type="radio" name="gender" id="male" required> Male
                         </label>
                         <label for="female"> <input type="radio" name="gender" id="female" required> Female</label>
-
                     </div>
                     <div class="form-group flex-column">
                         <label for="name">Name</label>
@@ -77,12 +76,129 @@
                 </div>
             </form>
 
-            <div>
-                <h2 class="highContrast">Welcome intrepid adventurer</h2>
-                <p class="highContrast">Your adventure is just beginning, let's start by defining your name and shaping
-                    who you are, our website is magical, we will be able to remember you just by placing your name in
-                    the form below.</p>
+            <div class="grid-container">
+                <div class="main-content">
+                    <h2 class="highContrast">Welcome intrepid adventurer</h2>
+                    <p class="highContrast">Your adventure is just beginning, let's start by defining your name and
+                        shaping who you are, our website is magical, we will be able to remember you just by placing
+                        your name in the form below.</p>
+                </div>
+
+                <span class="sprite css_webp"></span>
+                <span class="sprite javascript_webp"></span>
+                <span class="sprite typescript_webp"></span>
+                <span class="sprite html5_webp"></span>
+                <span class="sprite python_webp"></span>
+                <span class="sprite swift_png"></span>
+                <span class="sprite bashshell_webp"></span>
+                <span class="sprite csharp_webp"></span>
             </div>
+        </section>
+
+        <section class="roadmap">
+            <div class="heading">
+                <h2>Course map</h2>
+            </div>
+            <div class="roadmap-set">
+                <div class="grid-roadmap" id="roadMap"></div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions for Young Roadmap Wizards</h2>
+
+            <div class="expand">
+                <details>
+                    <summary>Can I save my progress?</summary>
+                    <p>Of course, young wizard! Thanks to our dedicated arcane software, your progress will be recorded
+                        in
+                        the digital annals. You can pause your adventure at any time and return right where you left off
+                        when you're ready to unleash new spells and continue your magical journey.</p>
+                </details>
+
+                <details>
+                    <summary>Can my parents or institution track my progress?</summary>
+                    <p>That's right! We've woven a special enchantment so that your guardians or teachers can observe
+                        your
+                        advancements in the art of magical programming. Through dedicated tracking portals, they'll be
+                        able
+                        to see the levels you've conquered, the power points you've accumulated, and the challenges
+                        you've
+                        overcome, providing you with the support and celebration you deserve at every step of your
+                        learning.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Is there a community of wizards ready to help me on my learning path?</summary>
+                    <p>Absolutely! We welcome you to our growing fellowship of aspiring sorcerers and mages. In our
+                        enchanted forums and magical communication channels, you'll find a melting pot of learners just
+                        like
+                        you, ready to share their incantations, unveil the secrets of code, and offer a helping hand in
+                        moments of doubt. Don't be afraid to ask! Together, we will forge a path of knowledge and
+                        discovery,
+                        where every shared experience strengthens the magic of all.</p>
+                </details>
+
+                <details>
+                    <summary>Will I have the support of an instructor during my learning?</summary>
+                    <p>Of course! On your magical journey, you'll have the guidance of experienced Masters of
+                        Programming,
+                        true archmages in the art of code. These wise instructors will be at your disposal to answer
+                        your
+                        questions, illuminate the dark paths, and offer powerful advice that will help you refine your
+                        skills and become a formidable programming wizard.</p>
+                </details>
+
+                <details>
+                    <summary>What magical tools (software) will I need for my learning?</summary>
+                    <p>Don't worry about complicated spells!</p>
+                    <p>To begin your journey, you'll mainly need a device <b>(like a computer or tablet)</b> with
+                        internet access. Most of our magical tools and practice environments are online, making it easy
+                        for you to access them from any corner of the realm. As you progress in your studies, we'll
+                        introduce you to code cauldrons <b>(text editors or integrated development environments)</b>
+                        that will help you refine your programming spells in a more advanced way.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <section>
+
+        </section>
+
+        <section class="newsletters">
+
+            <picture>
+                <source media="(min-width: 1000px)" srcset="images/newsletters-large.webp">
+                <source media="(min-width: 500px)" srcset="images/newsletters-medium.webp">
+                <img src="images/newsletters-small.webp" alt="ara-chloropterus-head-and-neck-details-by-tom-woodward"
+                    loading="lazy">
+            </picture>
+
+            <div class="subscribe-tablet-control">
+
+                <h2>
+                    Subscribe to Our Newsletter
+                </h2>
+                <form class="news" method="get" action="form.html">
+                    <div class="form-group flex-column">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div>                        
+                        <label for="terms">
+                            <input type="checkbox" name="terms" id="terms" value="acept"> I agree that my cauldron will
+                            not get vermin.
+                        </label>
+                    </div>
+                    <div class="form-submit">
+                        <input type="button" value="Keep me updated">
+                    </div>
+                </form>
+
+            </div>
+
         </section>
 
     </main>

@@ -14,6 +14,16 @@ nav ul li a {
     color: var(--black-tone);
 }
 
+
+@media (min-width: 32em) {
+    .subscribe-tablet-control {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media (min-width: 64em) {
     /* header */
 
@@ -69,11 +79,73 @@ nav ul li a {
         display: flex;
         flex-wrap: nowrap;
     }
-/* section */
-    .offer, .offer div {
+
+    /* section */
+    .offer,
+    .offer div {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
     }
+
+    .connector {
+        position: absolute;
+        background-color: var(--highlighted);
+        z-index: -1;
+    }
+
+    .connector-horizontal {
+        height: 6px;
+    }
+
+    .connector-vertical {
+        width: 6px;
+    }
+
+    .roadmap-set {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
+    .connector {
+        display: block;
+    }   
+
+    .faq img {
+        background-image: url('..images/magicians-school-large.webp');
+    }
+
+    .newsletters {
+        display: flex;
+        flex-direction: row;
+        background-color: var(--border);
+    }
+
+    .newsletters img {
+        width: max-content;
+        height: auto;
+    }
+
+    form.news {
+        width: 90%;
+    }
+
+    form.news .form-group input[type="email"] {
+        content: "";
+        background-image: url('../images/email.svg');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        background-size: 2.5rem;
+        padding-left: 3.5rem;
+        min-width: 480px;
+      }
+
+      form.news label {
+        font-size: 1.1rem;
+      }
+
+      .subscribe-tablet-control {
+        width: 100%;
+      }
 }
