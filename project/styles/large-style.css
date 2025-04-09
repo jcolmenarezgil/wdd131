@@ -8,6 +8,7 @@
     --headline: "Merriweather Sans", sans-serif;
     --content: "Lato", sans-serif;
     --cursor: pointer;
+    --font-size-1: 1rem;
 }
 
 nav ul li a {
@@ -22,6 +23,7 @@ nav ul li a {
         flex-direction: column;
         align-items: center;
     }
+
 }
 
 @media (min-width: 64em) {
@@ -81,6 +83,13 @@ nav ul li a {
     }
 
     /* section */
+
+    .invite-form div p,
+    .invite-form div h2 {
+        text-align: center;
+        padding: var(--padding-0);
+    }
+
     .offer,
     .offer div {
         display: flex;
@@ -103,6 +112,10 @@ nav ul li a {
         width: 6px;
     }
 
+    .selector ul li {
+        width: 250px;
+    }
+
     .roadmap-set {
         width: 1080px;
         margin: 0 auto;
@@ -110,7 +123,11 @@ nav ul li a {
 
     .connector {
         display: block;
-    }   
+    }
+
+    .faq {
+        padding: var(--padding-1);
+    }
 
     .faq img {
         background-image: url('..images/magicians-school-large.webp');
@@ -139,6 +156,7 @@ nav ul li a {
         background-size: 2.5rem;
         padding-left: 3.5rem;
         min-width: 480px;
+        font-size: var(--font-size-1);
       }
 
       form.news label {
@@ -147,5 +165,10 @@ nav ul li a {
 
       .subscribe-tablet-control {
         width: 100%;
+      }
+
+      .comparative {
+        margin: 0 auto;
+        max-width: 1080px;
       }
 }

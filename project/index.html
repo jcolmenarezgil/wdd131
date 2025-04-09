@@ -43,24 +43,26 @@
             <h2>Spring Semester Start Offer</h2>
             <div>
                 <div class="timer"></div>
-                <button id="call-to-action">Enroll Now</button>
+                <a href="form.html"><button id="call-to-action">Enroll Now</button></a>
             </div>
         </section>
         <section class="invite-form">
-            <form class="signup" action="form.html" method="get">
+            <form class="box-shadow signup" action="form.html" method="get">
                 <h2>Registration Form</h2>
                 <fieldset>
                     <legend>
                         What's Your Name?
                     </legend>
                     <div class="character">
-                        <img src="images/female-magician.webp" alt="choose-your-character">
+                        <div id="Character">
+                            <img src="images/magician-hat.webp" alt="choose-your-character">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="male">
-                            <input type="radio" name="gender" id="male" required> Male
+                            <input type="radio" name="gender" id="male" value="male" required> Male
                         </label>
-                        <label for="female"> <input type="radio" name="gender" id="female" required> Female</label>
+                        <label for="female"> <input type="radio" name="gender" id="female" value="female" required> Female</label>
                     </div>
                     <div class="form-group flex-column">
                         <label for="name">Name</label>
@@ -72,36 +74,56 @@
                     </div>
                 </fieldset>
                 <div class="form-submit">
-                    <input type="button" value="Let's Started">
+                    <input type="submit" value="Let's Started">
                 </div>
             </form>
 
             <div class="grid-container">
                 <div class="main-content">
                     <h2 class="highContrast">Welcome intrepid adventurer</h2>
-                    <p class="highContrast">Your adventure is just beginning, let's start by defining your name and
-                        shaping who you are, our website is magical, we will be able to remember you just by placing
-                        your name in the form below.</p>
+                    <p class="highContrast">Your adventure is just beginning, <b class="user-name">let's start by defining your name</b>, our web is magic, we will be able to remember not only your name, but also your learning progress.</p>
                 </div>
 
-                <span class="sprite css_webp"></span>
-                <span class="sprite javascript_webp"></span>
-                <span class="sprite typescript_webp"></span>
-                <span class="sprite html5_webp"></span>
-                <span class="sprite python_webp"></span>
-                <span class="sprite swift_png"></span>
-                <span class="sprite bashshell_webp"></span>
-                <span class="sprite csharp_webp"></span>
+                <span class="sprite floating css_webp"></span>
+                <span class="sprite floating javascript_webp"></span>
+                <span class="sprite floating typescript_webp"></span>
+                <span class="sprite floating html5_webp"></span>
+                <span class="sprite floating python_webp"></span>
+                <span class="sprite floating swift_png"></span>
+                <span class="sprite floating bashshell_webp"></span>
+                <span class="sprite floating csharp_webp"></span>
             </div>
         </section>
 
         <section class="roadmap">
             <div class="heading">
                 <h2>Course map</h2>
+                <p>Choose wisely your next adventure.</p>
+            </div>
+            <div class="selector">
+                <ul>
+                    <li>
+                        <div class="road">Front WebDeveloper</div>
+                    </li>
+                    <li>
+                        <div class="road unfold">Javascript Fundamentals</div>
+                    </li>
+
+                    <li>
+                        <div class="road">Python</div>
+                    </li>
+                    <li>
+                        <div class="road">IA for Beginner</div>
+                    </li>
+                    <li>
+                        <div class="road">Bugs hunter</div>
+                    </li>
+                </ul>
             </div>
             <div class="roadmap-set">
                 <div class="grid-roadmap" id="roadMap"></div>
             </div>
+
         </section>
 
         <section class="faq">
@@ -110,7 +132,7 @@
             <div class="expand">
                 <details>
                     <summary>Can I save my progress?</summary>
-                    <p>Of course, young wizard! Thanks to our dedicated arcane software, your progress will be recorded
+                    <p>Of course, <b class="user-name">young wizard</b>! Thanks to our dedicated arcane software, your progress will be recorded
                         in
                         the digital annals. You can pause your adventure at any time and return right where you left off
                         when you're ready to unleash new spells and continue your magical journey.</p>
@@ -161,19 +183,14 @@
                 </details>
             </div>
         </section>
-
-
-        <section>
-
-        </section>
-
         <section class="newsletters">
 
             <picture>
                 <source media="(min-width: 1000px)" srcset="images/newsletters-large.webp">
                 <source media="(min-width: 500px)" srcset="images/newsletters-medium.webp">
-                <img src="images/newsletters-small.webp" alt="ara-chloropterus-head-and-neck-details-by-tom-woodward"
-                    loading="lazy">
+                <img src="images/newsletters-small.webp"
+                    title="Get the latest news about new incantations at your fingertips."
+                    alt="get-the-latest-news-at-your-fingertips" loading="lazy">
             </picture>
 
             <div class="subscribe-tablet-control">
@@ -184,16 +201,16 @@
                 <form class="news" method="get" action="form.html">
                     <div class="form-group flex-column">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" required>
+                        <input type="email" name="email" id="email" placeholder="your-email@here.com" required>
                     </div>
-                    <div>                        
+                    <div>
                         <label for="terms">
                             <input type="checkbox" name="terms" id="terms" value="acept"> I agree that my cauldron will
                             not get vermin.
                         </label>
                     </div>
                     <div class="form-submit">
-                        <input type="button" value="Keep me updated">
+                        <input type="submit" value="Keep me updated">
                     </div>
                 </form>
 

@@ -38,7 +38,7 @@ span,
 a,
 button,
 legend,
-input[type="text"],
+input[type="text"] input[type="phone"],
 label {
     font-family: var(--content);
     padding: 10px;
@@ -50,6 +50,8 @@ a {
     color: var(--highlighted);
 }
 
+button,
+input[type="submit"],
 input[type="button"],
 input[type="radio"]:hover,
 button:hover,
@@ -84,9 +86,18 @@ li {
     font-size: var(--font-size-1);
 }
 
+form.box-shadow {
+    box-shadow: 1px 1px 14px #000;
+}
+
 form.signup {
     background-color: var(--white-tone);
-    box-shadow: 1px 1px 14px #000;
+    max-width: 400px;
+    min-width: 380px;
+}
+
+form.complete-form {
+    margin: 1rem auto;
 }
 
 form {
@@ -95,8 +106,6 @@ form {
     flex-direction: column;
     border-radius: var(--radius);
     margin: 0 auto;
-    max-width: 400px;
-    min-width: 380px;
     margin: var(--padding-1);
 }
 
@@ -120,7 +129,8 @@ input[type="radio"] {
 }
 
 form input[type="text"],
-form input[type="email"] {
+form input[type="email"],
+form input[type="phone"] {
     font-size: var(--font-size-1);
     font-family: var(--content);
     border: 1px solid var(--gray-tone);
@@ -128,7 +138,9 @@ form input[type="email"] {
     padding: var(--padding-1);
 }
 
-form input[type="button"] {
+form input[type="button"],
+form input[type="submit"],
+button {
     padding: var(--padding-0);
     background-color: var(--highlighted);
     color: var(--black-tone);
@@ -272,7 +284,7 @@ header {
 .invite-form div p,
 .invite-form div h2 {
     text-align: center;
-    padding: var(--padding-1);
+    padding: 10px;
 }
 
 .character {
@@ -286,11 +298,14 @@ header {
     vertical-align: middle;
 }
 
+.floating {
+    animation: floatAnimation 3s infinite alternate;
+}
+
 .sprite {
     background-image: url(../images/programming.png);
     background-position: left center;
     background-repeat: no-repeat;
-    animation: floatAnimation 3s infinite alternate;
 }
 
 .sprite.css_webp {
@@ -304,7 +319,7 @@ header {
     background-position: 0 -58px;
     width: 48px;
     height: 48px;
-    justify-self: left;
+    justify-self: center;
 }
 
 .sprite.typescript_webp {
@@ -325,14 +340,14 @@ header {
     background-position: 0 -220px;
     width: 48px;
     height: 50px;
-    justify-self: left;
+    justify-self: right;
 }
 
 .sprite.swift_png {
     background-position: 0 -274px;
     width: 48px;
     height: 51px;
-    justify-self: left;
+    justify-self: right;
 }
 
 .sprite.bashshell_webp {
@@ -355,6 +370,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     max-width: 80%;
+    margin: var(--margin-2);
 }
 
 .main-content {
@@ -377,6 +393,11 @@ header {
     background-color: var(--secondary-color);
     margin-bottom: 1rem;
     text-align: center;
+}
+
+.gridmap {
+    background-size: 40px 40px;
+    background-image: radial-gradient(circle, var(--black-tone) 1px, rgba(0, 0, 0, 0) 1px);
 }
 
 .grid-roadmap {
@@ -426,14 +447,78 @@ header {
     background-color: var(--highlighted);
 }
 
+.path div {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.path .level {
+    font-size: 0.8rem;
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+.path .points::before {
+    content: "+";
+}
+
+.path .points {
+    color: green;
+}
+
+.path .beginner {
+    color: green;
+}
+
+.path .intermediate {
+    color: #ff9710;
+}
+
+.path .advanced {
+    color: purple;
+}
+
+.selector {
+    font-family: var(--content);
+    border-radius: var(--radius);
+}
+
+.selector li:has(> .unfold) {
+    background-color: var(--primary-color);
+    color: var(--white-tone);
+}
+
+.selector .unfold::after {
+    background-image: url('../images/unfold.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content: "";
+}
+
+.selector ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.selector ul li {
+    border: 1px inset var(--black-tone);
+    padding: var(--padding-0) var(--padding-1);
+    font-size: var(--font-size-1);
+    background-color: var(--highlighted);
+    font-weight: 600;
+    width: auto;
+    margin: 1.5rem var(--margin-1);
+}
+
 /* section: faq */
 
 .faq {
     max-width: 800px;
     margin: 0 auto;
-    padding: var(--padding-1);
     position: relative;
-
 }
 
 .faq h2 {
@@ -478,4 +563,99 @@ header {
 form.news {
     display: flex;
     flex-direction: column;
+}
+
+/* section:table */
+
+.table h2 {
+    text-align: center;
+    padding: var(--padding-1);
+}
+
+.comparative {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    font-size: var(--font-size-1);
+    font-family: var(--content);
+}
+
+.comparative .header {
+    font-weight: bold;
+    padding: var(--padding-1);
+    text-align: center;
+    border-bottom: 1px solid var(--graytone);
+    border-right: 1px solid var(--graytone);
+}
+
+.comparative .header:nth-child(2) {
+    background-color: var(--primary-color);
+    color: var(--white-tone);
+}
+
+.comparative .header:nth-child(3) {
+    border-right: none;
+    background-color: var(--highlighted);
+}
+
+.comparative .feature {
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--graytone);
+    border-right: 1px solid var(--graytone);
+    background-color: #dedede;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comparative .value {
+    padding: 10px;
+    border-bottom: 1px solid var(--graytone);
+    border-right: 1px solid var(--graytone);
+    padding: 2rem;
+    text-align: center;
+}
+
+.comparative .btn-choice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comparative .value:nth-child(even) {
+    background-color: #f6f9ff;
+}
+
+/* Opcional: Estilos para mejorar la apariencia en pantallas más pequeñas */
+@media (max-width: 600px) {
+    .comparative {
+        grid-template-columns: 1fr;
+        /* Apilar las columnas en pantallas pequeñas */
+    }
+
+    .header,
+    .feature,
+    .value {
+        border-right: none;
+        /* Eliminar bordes derechos en columnas apiladas */
+        text-align: left;
+        /* Alinear el texto a la izquierda en pantallas pequeñas */
+    }
+
+    .header:first-child {
+        display: none;
+        /* Ocultar la celda vacía en pantallas pequeñas */
+    }
+
+    .feature::after {
+        /* Añadir un indicador visual para las características */
+        content: ":";
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .value {
+        padding-left: 20px;
+        /* Indentar los valores en pantallas pequeñas */
+    }
 }

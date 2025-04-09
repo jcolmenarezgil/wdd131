@@ -38,7 +38,129 @@
             <img src="images/smartphone.png" title="Code Magicians Academy Phone Number" alt="call-by-phone">
         </div>
     </header>
-    <main></main>
+    <main>
+        <section>
+            <form class="signup complete-form" method="get" action="subcription.html">
+                <h2>Create Your Account</h2>
+                <fieldset>
+                    <legend>
+                        Account Type
+                    </legend>
+                    <div class="character">
+                        <div id="Character">
+                            <img src="images/magician-hat.webp" alt="choose-your-character">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="male"><input type="radio" name="gender" id="male" required> Male </label>
+                        <label for="female"> <input type="radio" name="gender" id="female" required> Female</label>
+                        <label for="institution"><input type="radio" name="gender" id="institution" required>
+                            Institution </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        Account Information
+                    </legend>
+                    <div class="form-group flex-column">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="form-group flex-column">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" id="lastname">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        Contact Information
+                    </legend>
+
+                    <div class="form-group flex-column">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group flex-column">
+                        <label for="phone">Phone</label>
+                        <input type="phone" name="phone" id="phone" placeholder="+1 123 456 0">
+                    </div>
+                </fieldset>
+                <div class="form-submit">
+                    <input type="submit" value="Conjure My Account!">
+                </div>
+            </form>
+        </section>
+        <section class="table">
+            <h2>
+                Learn the differences between account types
+            </h2>
+            <div class="comparative">
+                <div class="header"></div>
+                <div class="header">Individual Account</div>
+                <div class="header">Institution Account</div>
+
+                <div class="feature">Number of Users</div>
+                <div class="value">1 person</div>
+                <div class="value">Up to 255 students</div>
+
+                <div class="feature">User Panels</div>
+                <div class="value">Growth Panel (Seedbed)</div>
+                <div class="value">Wizards Panel, Teachers Panel</div>
+
+                <div class="feature">Statistics</div>
+                <div class="value">Personal statistics panel</div>
+                <div class="value">Statistics by sections and cohorts</div>
+
+                <div class="feature">Forum Moderation</div>
+                <div class="value">"Dungeon Guardian" title by helping in forums</div>
+                <div class="value">Dungeon Guardian (Dedicated Moderator)</div>
+
+                <div class="feature">Reports</div>
+                <div class="value">Not available</div>
+                <div class="value">Detailed reports</div>
+
+                <div class="feature">Certificates</div>
+                <div class="value">Yes</div>
+                <div class="value">Yes</div>
+
+                <div class="feature">Group Video Calls</div>
+                <div class="value">Participation: Up to 12 students/session</div>
+                <div class="value">Initiation: Up to 255 students/session</div>
+                <div></div>
+                <div class="btn-choice">
+                    <button>Choose Individual Account</button>
+                </div>
+                <div class="btn-choice">
+                    <button>Choose Institution Account</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <section class="faq">
+                <h2>Frequently asked questions for choosing the type of account</h2>
+
+                <div class="expand">
+                    <details>
+                        <summary>Can I convert my individual account into an institution account?</summary>
+                        <p>Of course, <b class="user-name">young wizard</b>! You can start with a personal account, learn, and who knows if you too will wish to train other young wizards during your learning journey. Knowledge and wisdom should be bestowed upon every adventurer who desires it. By doing so, you will also grow, and your magical power along with you.</p>
+                    </details>
+
+                    <details>
+                        <summary>What happens if I want to join a school?</summary>
+                        <p>You stand before a grand community of wizards. A messenger owl will be sent to the institution you desire, and you will be given a name in their records. From there, you will be part of a great community of wizards and sorcerers eager to help you.</p>
+                    </details>
+
+                    <details>
+                        <summary>Will an individual account prevent me from obtaining certificates?</summary>
+                        <p>Absolutely not! Whether you are part of an institution account or an individual account, the holy grail will grant you the wisdom you need and a scroll with your name that demonstrates to the world the realms, scrolls, and oracles you have conquered. Do not fear, begin your journey today.</p>
+                    </details>
+                </div>
+            </section>
+        </section>
+    </main>
     <footer></footer>
 </body>
 
