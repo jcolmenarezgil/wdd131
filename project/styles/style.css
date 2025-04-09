@@ -44,6 +44,10 @@ label {
     padding: 10px;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 a {
     text-decoration: none;
     font-weight: 600;

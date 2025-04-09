@@ -45,8 +45,10 @@ document.addEventListener('DOMContentLoaded', function () {
         return `<p>remaining time ${formattedMinutes}:${formattedSeconds}</p>`;
     }
 
-    function updateTimerDisplay() {
-        timerDisplay.innerHTML = formatTime(timeLeft);
+    if (timerDisplay) {
+        function updateTimerDisplay() {
+            timerDisplay.innerHTML = formatTime(timeLeft);
+        }
     }
 
     function shakeButton() {
@@ -58,12 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function startTimer() {
         timeLeft = getTimeLeftFromStorage();
-        updateTimerDisplay();
+        if (timerDisplay) {
+            updateTimerDisplay();
+        }
 
         const timerInterval = setInterval(() => {
             timeLeft--;
             saveTimeToStorage(timeLeft);
-            updateTimerDisplay();
+            if (timerDisplay) {
+                updateTimerDisplay();
+            }
 
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
@@ -85,23 +91,29 @@ function changeCharacter() {
     const instituteRadio = document.querySelector('#institution');
     const characterDiv = document.querySelector('#Character');
 
-    maleRadio.addEventListener('change', function () {
-        if (this.checked) {
-            characterDiv.innerHTML = '<img src="images/male-magician.webp" alt="male-magician">';
-        }
-    });
+    if (maleRadio && characterDiv) {
+        maleRadio.addEventListener('change', function () {
+            if (this.checked) {
+                characterDiv.innerHTML = '<img src="images/male-magician.webp" alt="male-magician">';
+            }
+        });
+    }
 
-    femaleRadio.addEventListener('change', function () {
-        if (this.checked) {
-            characterDiv.innerHTML = '<img src="images/female-magician.webp" alt="female-magician">';
-        }
-    });
+    if (femaleRadio && characterDiv) {
+        femaleRadio.addEventListener('change', function () {
+            if (this.checked) {
+                characterDiv.innerHTML = '<img src="images/female-magician.webp" alt="female-magician">';
+            }
+        });
 
-    instituteRadio.addEventListener('change', function () {
-        if (this.checked) {
-            characterDiv.innerHTML = '<img src="images/institute.webp" alt="institute">';
-        }
-    })
+    }
+    if (instituteRadio && characterDiv) {
+        instituteRadio.addEventListener('change', function () {
+            if (this.checked) {
+                characterDiv.innerHTML = '<img src="images/institute.webp" alt="institute">';
+            }
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', changeCharacter);
@@ -109,25 +121,26 @@ document.addEventListener('DOMContentLoaded', changeCharacter);
 document.addEventListener('DOMContentLoaded', function () {
     const registrationForm = document.querySelector('.signup');
 
-    registrationForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const gender = document.querySelector('input[name="gender"]:checked')?.value;
-        const name = document.querySelector('#name').value;
-        const lastname = document.querySelector('#lastname').value;
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const gender = document.querySelector('input[name="gender"]:checked')?.value;
+            const name = document.querySelector('#name').value;
+            const lastname = document.querySelector('#lastname').value;
 
-        const userAccount = {
-            gender: gender,
-            name: name,
-            lastname: lastname
-        };
+            const userAccount = {
+                gender: gender,
+                name: name,
+                lastname: lastname
+            };
 
-        localStorage.setItem('userAccount', JSON.stringify(userAccount));
+            localStorage.setItem('userAccount', JSON.stringify(userAccount));
 
-        window.location.href = 'index.html';
-    });
-
+            window.location.href = 'index.html';
+        });
+    }
     const storedAccount = localStorage.getItem('userAccount');
-    if (storedAccount) {
+    if (storedAccount && registrationForm) {
         const parsedAccount = JSON.parse(storedAccount);
         document.querySelector('#name').value = parsedAccount.name || '';
         document.querySelector('#lastname').value = parsedAccount.lastname || '';
@@ -477,77 +490,77 @@ const webDevRoadmap = [
 
 const aiForKidsRoadmap = [
     {
-      title: "The Awakening of the Magic Mind",
-      points: 100,
-      level: "beginner",
-      description: "Awaken the magic in machines! Learn how to give them a little bit of intelligence.",
-      topics: [
-        { name: "What is an Artificial Magic Mind?", completed: false },
-        { name: "Thinking like a Machine (Simple Steps)", completed: false },
-        { name: "Giving Clear Orders (Simple Algorithms)", completed: false },
-        { name: "Recognizing Magic Patterns", completed: false },
-      ],
+        title: "The Awakening of the Magic Mind",
+        points: 100,
+        level: "beginner",
+        description: "Awaken the magic in machines! Learn how to give them a little bit of intelligence.",
+        topics: [
+            { name: "What is an Artificial Magic Mind?", completed: false },
+            { name: "Thinking like a Machine (Simple Steps)", completed: false },
+            { name: "Giving Clear Orders (Simple Algorithms)", completed: false },
+            { name: "Recognizing Magic Patterns", completed: false },
+        ],
     },
     {
-      title: "Learning from Wise Elves (Supervised Learning)",
-      points: 150,
-      level: "beginner",
-      description: "Teach your machine by showing it many examples, just like wise elves do!",
-      topics: [
-        { name: "Showing Examples (Data for Training)", completed: false },
-        { name: "Labeling the Magic Examples", completed: false },
-        { name: "The Machine Learns to Sort (Classification)", completed: false },
-        { name: "Predicting the Magic Future (Simple Regression)", completed: false },
-      ],
+        title: "Learning from Wise Elves (Supervised Learning)",
+        points: 150,
+        level: "beginner",
+        description: "Teach your machine by showing it many examples, just like wise elves do!",
+        topics: [
+            { name: "Showing Examples (Data for Training)", completed: false },
+            { name: "Labeling the Magic Examples", completed: false },
+            { name: "The Machine Learns to Sort (Classification)", completed: false },
+            { name: "Predicting the Magic Future (Simple Regression)", completed: false },
+        ],
     },
     {
-      title: "Exploring Dungeons on Their Own (Unsupervised Learning)",
-      points: 200,
-      level: "intermediate",
-      description: "Let your machine discover secrets and groups on its own in the dungeons!",
-      topics: [
-        { name: "Finding Hidden Groups (Clustering)", completed: false },
-        { name: "Reducing Complex Magic (Dimensionality Reduction)", completed: false },
-        { name: "Looking for Strange Things (Anomaly Detection)", completed: false },
-      ],
+        title: "Exploring Dungeons on Their Own (Unsupervised Learning)",
+        points: 200,
+        level: "intermediate",
+        description: "Let your machine discover secrets and groups on its own in the dungeons!",
+        topics: [
+            { name: "Finding Hidden Groups (Clustering)", completed: false },
+            { name: "Reducing Complex Magic (Dimensionality Reduction)", completed: false },
+            { name: "Looking for Strange Things (Anomaly Detection)", completed: false },
+        ],
     },
     {
-      title: "Learning with Rewards and Punishments (Reinforcement Learning)",
-      points: 250,
-      level: "intermediate",
-      description: "Give it rewards when it does the right thing, and it will learn to be the best!",
-      topics: [
-        { name: "Giving Magic Rewards", completed: false },
-        { name: "Avoiding Punishments", completed: false },
-        { name: "Learning Step by Step (Iterations)", completed: false },
-        { name: "The Magic Agent and the Environment", completed: false },
-      ],
+        title: "Learning with Rewards and Punishments (Reinforcement Learning)",
+        points: 250,
+        level: "intermediate",
+        description: "Give it rewards when it does the right thing, and it will learn to be the best!",
+        topics: [
+            { name: "Giving Magic Rewards", completed: false },
+            { name: "Avoiding Punishments", completed: false },
+            { name: "Learning Step by Step (Iterations)", completed: false },
+            { name: "The Magic Agent and the Environment", completed: false },
+        ],
     },
     {
-      title: "Building Intelligent Spells (Basic Neural Networks)",
-      points: 300,
-      level: "advanced",
-      description: "Create networks of connected magic like the brains of fantastic creatures!",
-      topics: [
-        { name: "What are Magic Neurons?", completed: false },
-        { name: "Connecting the Neurons (Layers)", completed: false },
-        { name: "Teaching the Network (Basic Training)", completed: false },
-        { name: "Recognizing Magic Images (Introduction to Vision)", completed: false },
-      ],
+        title: "Building Intelligent Spells (Basic Neural Networks)",
+        points: 300,
+        level: "advanced",
+        description: "Create networks of connected magic like the brains of fantastic creatures!",
+        topics: [
+            { name: "What are Magic Neurons?", completed: false },
+            { name: "Connecting the Neurons (Layers)", completed: false },
+            { name: "Teaching the Network (Basic Training)", completed: false },
+            { name: "Recognizing Magic Images (Introduction to Vision)", completed: false },
+        ],
     },
     {
-      title: "The Future of Magic (AI Applications)",
-      points: 350,
-      level: "advanced",
-      description: "Discover how the magic mind can help in the real world and what surprises await us!",
-      topics: [
-        { name: "Intelligent Magic Helpers", completed: false },
-        { name: "Creating Magic Art with AI", completed: false },
-        { name: "AI in Magic Games", completed: false },
-        { name: "Thinking About the Future of AI", completed: false },
-      ],
+        title: "The Future of Magic (AI Applications)",
+        points: 350,
+        level: "advanced",
+        description: "Discover how the magic mind can help in the real world and what surprises await us!",
+        topics: [
+            { name: "Intelligent Magic Helpers", completed: false },
+            { name: "Creating Magic Art with AI", completed: false },
+            { name: "AI in Magic Games", completed: false },
+            { name: "Thinking About the Future of AI", completed: false },
+        ],
     },
-  ];
+];
 
 document.addEventListener('DOMContentLoaded', () => {
     const roadMapContainer = document.querySelector('#roadMap');
@@ -561,14 +574,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const normalizedSelectedRoadmap = selectedRoadmap.toLowerCase().replace('-', ' ');
 
         roadDivs.forEach(div => {
-          const classes = div.classList;
+            const classes = div.classList;
 
-          for (const className of classes) {
-            if (className.toLowerCase().replace('-', ' ') === normalizedSelectedRoadmap) {
-              div.classList.add('unfold');
-              break;
+            for (const className of classes) {
+                if (className.toLowerCase().replace('-', ' ') === normalizedSelectedRoadmap) {
+                    div.classList.add('unfold');
+                    break;
+                }
             }
-          }
         });
 
         switch (selectedRoadmap.toLowerCase()) {
@@ -595,7 +608,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const renderRoadmap = (roadmapData) => {
-        roadMapContainer.innerHTML = '';
+        if (roadMapContainer) {
+            roadMapContainer.innerHTML = '';
+        }
         roadmapData.forEach(level => {
             const pathElement = document.createElement('div');
             pathElement.classList.add('path');
@@ -632,7 +647,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             pathElement.appendChild(topicsList);
-            roadMapContainer.appendChild(pathElement);
+            if (roadMapContainer) {
+                roadMapContainer.appendChild(pathElement);
+            }
         });
     };
 
@@ -644,47 +661,50 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const gridContainer = document.querySelector('.grid-container');
     const pathElements = document.querySelectorAll('.path');
-    const gapValue = parseFloat(getComputedStyle(gridContainer).gap);
 
-    function createConnector(type, x, y, length) {
-        const connector = document.createElement('div');
-        connector.classList.add('connector', `connector-${type}`);
-        connector.style.left = `${x}px`;
-        connector.style.top = `${y}px`;
-        if (type === 'horizontal') {
-            connector.style.width = `${length}px`;
-        } else {
-            connector.style.height = `${length}px`;
-        }
-        gridContainer.appendChild(connector);
-    }
+    if (gridContainer) {
+        const gapValue = parseFloat(getComputedStyle(gridContainer).gap);
+        const numColumns = getComputedStyle(gridContainer).gridTemplateColumns.split(' ').length;
 
-    if (pathElements.length > 1) {
-        for (let i = 0; i < pathElements.length; i++) {
-            const currentPathRect = pathElements[i].getBoundingClientRect();
-
-            if (i % getComputedStyle(gridContainer).gridTemplateColumns.split(' ').length < getComputedStyle(gridContainer).gridTemplateColumns.split(' ').length - 1) {
-                const nextPath = pathElements[i + 1];
-                if (nextPath) {
-                    const nextPathRect = nextPath.getBoundingClientRect();
-                    const startX = currentPathRect.right;
-                    const startY = currentPathRect.top + currentPathRect.height / 2;
-                    const endX = nextPathRect.left;
-                    const length = endX - startX;
-                    createConnector('horizontal', startX + window.scrollX, startY + window.scrollY, length);
-                }
+        function createConnector(type, x, y, length) {
+            const connector = document.createElement('div');
+            connector.classList.add('connector', `connector-${type}`);
+            connector.style.left = `${x}px`;
+            connector.style.top = `${y}px`;
+            if (type === 'horizontal') {
+                connector.style.width = `${length}px`;
+            } else {
+                connector.style.height = `${length}px`;
             }
+            gridContainer.appendChild(connector);
+        }
 
-            const numColumns = getComputedStyle(gridContainer).gridTemplateColumns.split(' ').length;
-            if (i < pathElements.length - numColumns) {
-                const belowPath = pathElements[i + numColumns];
-                if (belowPath) {
-                    const belowPathRect = belowPath.getBoundingClientRect();
-                    const startX = currentPathRect.left + currentPathRect.width / 2;
-                    const startY = currentPathRect.bottom;
-                    const endY = belowPathRect.top;
-                    const length = endY - startY;
-                    createConnector('vertical', startX + window.scrollX, startY + window.scrollY, length);
+        if (pathElements.length > 1) {
+            for (let i = 0; i < pathElements.length; i++) {
+                const currentPathRect = pathElements[i].getBoundingClientRect();
+
+                if (i % numColumns < numColumns - 1) {
+                    const nextPath = pathElements[i + 1];
+                    if (nextPath) {
+                        const nextPathRect = nextPath.getBoundingClientRect();
+                        const startX = currentPathRect.right;
+                        const startY = currentPathRect.top + currentPathRect.height / 2;
+                        const endX = nextPathRect.left;
+                        const length = endX - startX;
+                        createConnector('horizontal', startX + window.scrollX, startY + window.scrollY, length);
+                    }
+                }
+
+                if (i < pathElements.length - numColumns) {
+                    const belowPath = pathElements[i + numColumns];
+                    if (belowPath) {
+                        const belowPathRect = belowPath.getBoundingClientRect();
+                        const startX = currentPathRect.left + currentPathRect.width / 2;
+                        const startY = currentPathRect.bottom;
+                        const endY = belowPathRect.top;
+                        const length = endY - startY;
+                        createConnector('vertical', startX + window.scrollX, startY + window.scrollY, length);
+                    }
                 }
             }
         }
