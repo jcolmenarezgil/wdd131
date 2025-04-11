@@ -89,6 +89,10 @@ nav ul li a {
         text-align: center;
         padding: var(--padding-0);
     }
+    
+    .offer {
+        padding: 0;
+    }
 
     .offer,
     .offer div {
@@ -96,6 +100,10 @@ nav ul li a {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+    }
+
+    .path {
+        max-width: 400px;
     }
 
     .connector {
@@ -113,7 +121,7 @@ nav ul li a {
     }
 
     .selector ul li {
-        width: 250px;
+        width: auto;
     }
 
     .roadmap-set {
@@ -171,4 +179,13 @@ nav ul li a {
         margin: 0 auto;
         max-width: 1080px;
       }
+
+      footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    footer .author {
+        grid-column: 1/5
+    }
 }

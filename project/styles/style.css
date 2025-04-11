@@ -54,7 +54,7 @@ a {
     color: var(--highlighted);
 }
 
-button,
+.button,
 input[type="submit"],
 input[type="button"],
 input[type="radio"]:hover,
@@ -144,7 +144,8 @@ form input[type="phone"] {
 
 form input[type="button"],
 form input[type="submit"],
-button {
+button,
+.button {
     padding: var(--padding-0);
     background-color: var(--highlighted);
     color: var(--black-tone);
@@ -155,6 +156,10 @@ button {
     font-family: var(--content);
     font-size: var(--font-size-1);
     font-weight: 800;
+}
+
+.button {
+    max-width: fit-content;
 }
 
 /* animations */
@@ -238,6 +243,10 @@ header {
     order: 2;
 }
 
+.logo h1 {
+    text-align: center;
+}
+
 .logo-img {
     width: 68px;
     height: auto;
@@ -252,6 +261,13 @@ header {
 }
 
 /* section */
+
+.offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding-1);
+}
 
 .offer button {
     color: var(--black-tone);
@@ -413,7 +429,7 @@ header {
 
 .path {
     background-color: var(--white-tone);
-    max-width: 400px;
+    max-width: 380px;
     height: auto;
     border: 1px solid var(--gray-tone);
     border-radius: var(--radius);
@@ -482,6 +498,11 @@ header {
     color: purple;
 }
 
+.path:last-child,
+.path:nth-last-child(2) {
+    margin-bottom: 2rem;
+}
+
 .selector {
     font-family: var(--content);
     border-radius: var(--radius);
@@ -515,6 +536,11 @@ header {
     font-weight: 600;
     width: auto;
     margin: 1.5rem var(--margin-1);
+}
+
+.roadmap-filter {
+    margin: 0 auto;
+    max-width: 800px;
 }
 
 /* section: faq */
@@ -630,29 +656,23 @@ form.news {
     background-color: #f6f9ff;
 }
 
-/* Opcional: Estilos para mejorar la apariencia en pantallas más pequeñas */
 @media (max-width: 600px) {
     .comparative {
         grid-template-columns: 1fr;
-        /* Apilar las columnas en pantallas pequeñas */
     }
 
     .header,
     .feature,
     .value {
         border-right: none;
-        /* Eliminar bordes derechos en columnas apiladas */
         text-align: left;
-        /* Alinear el texto a la izquierda en pantallas pequeñas */
     }
 
     .header:first-child {
         display: none;
-        /* Ocultar la celda vacía en pantallas pequeñas */
     }
 
     .feature::after {
-        /* Añadir un indicador visual para las características */
         content: ":";
         font-weight: bold;
         margin-left: 5px;
@@ -660,6 +680,94 @@ form.news {
 
     .value {
         padding-left: 20px;
-        /* Indentar los valores en pantallas pequeñas */
     }
+}
+
+/* section: subscription */
+
+.subscription {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.heading {
+    padding: var(--padding-1);
+}
+
+.subscription p {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.subscription p span {
+    font-size: var(--font-size-1);
+    font-family: var(--content);
+    font-weight: bold;
+}
+
+.subscription p span:hover {
+    cursor: var(--cursor);
+    color: var(--highlighted);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white-tone);
+}
+
+footer a {
+    color: var(--white-tone);
+}
+
+footer .logotype {
+    text-align: center;
+}
+
+footer img {
+    max-width: 230px;
+    height: auto;
+}
+
+footer ul li {
+    padding: var(--padding-1);
+}
+
+footer .links {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+footer .social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .footer-logo a:hover {
+    mix-blend-mode: luminosity;
+}
+
+footer .footer-logo .rrss {
+    width: 48px;
+    height: auto;
+    mix-blend-mode: difference;
+    margin: 0 1rem;
+}
+
+
+footer .author {
+    display: grid;
+    justify-items: center;
+    font-size: var(--font-size-1);
+    font-family: var(--content);
+    padding: var(--padding-1);
+    border-top: 1px solid var(--white-tone);
+    margin-top: var(--margin-1);
 }

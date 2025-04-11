@@ -118,6 +118,7 @@ function changeCharacter() {
 
 document.addEventListener('DOMContentLoaded', changeCharacter);
 
+/* registrationForm */
 document.addEventListener('DOMContentLoaded', function () {
     const registrationForm = document.querySelector('.signup');
 
@@ -126,41 +127,147 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             const gender = document.querySelector('input[name="gender"]:checked')?.value;
             const name = document.querySelector('#name').value;
-            const lastname = document.querySelector('#lastname').value;
+            const lastname = document.querySelector('#lastname')?.value;
+            const action = this.getAttribute('action');
+            const emailElement = document.querySelector('#email');
+            const email = emailElement ? emailElement.value : undefined;
+
+            if (gender === 'male' || gender === 'female') {
+                account = 'Individual';
+            } else if (gender === 'institution') {
+                account = 'Institution';
+            } else {
+                account = undefined;
+            }
 
             const userAccount = {
                 gender: gender,
                 name: name,
-                lastname: lastname
+                lastname: lastname,
+                accountType: account
             };
+
+            if (email !== undefined) {
+                userAccount.email = email;
+            }
 
             localStorage.setItem('userAccount', JSON.stringify(userAccount));
 
-            window.location.href = 'index.html';
+            if (!action || action === '#' || action === '') {
+                window.location.href = 'index.html';
+            } else {
+                window.location.href = action;
+            }
         });
     }
     const storedAccount = localStorage.getItem('userAccount');
-    if (storedAccount && registrationForm) {
+    if (storedAccount) {
         const parsedAccount = JSON.parse(storedAccount);
-        document.querySelector('#name').value = parsedAccount.name || '';
-        document.querySelector('#lastname').value = parsedAccount.lastname || '';
-        const characterDiv = document.querySelector('#Character');
-        if (parsedAccount.gender === 'male') {
-            document.querySelector('#male').checked = true;
-            characterDiv.innerHTML = '<img src="images/male-magician.webp" alt="male-magician">';
 
-        } else if (parsedAccount.gender === 'female') {
-            document.querySelector('#female').checked = true;
-            characterDiv.innerHTML = '<img src="images/female-magician.webp" alt="female-magician">';
-
-        }
-        if (storedAccount) {
-            const userNameElements = document.querySelectorAll('.user-name');
-
-            userNameElements.forEach(element => {
-                element.textContent = parsedAccount.name || 'adventurer';
+        const updateTextContent = (className, value, defaultValue = '') => {
+            const elements = document.querySelectorAll(`.${className}`);
+            elements.forEach(element => {
+                element.textContent = value || defaultValue;
             });
+        };
+
+        const nameInput = document.querySelector('#name');
+        if (nameInput) {
+            nameInput.value = parsedAccount.name || '';
         }
+
+        const lastnameInput = document.querySelector('#lastname');
+        if (lastnameInput) {
+            lastnameInput.value = parsedAccount.lastname || '';
+        }
+
+        const emailInput = document.querySelector('#email');
+        if (emailInput && parsedAccount.email) {
+            emailInput.value = parsedAccount.email;
+        }
+
+        const characterDiv = document.querySelector('#Character');
+        const maleRadio = document.querySelector('#male');
+        const femaleRadio = document.querySelector('#female');
+        
+        if (parsedAccount.gender === 'male') {
+            const imgElement = characterDiv ? characterDiv.querySelector('img') : null;
+            if (imgElement) {
+                imgElement.src = 'images/male-magician.webp';
+                imgElement.alt = 'male-magician';
+            } else if (characterDiv) {
+                characterDiv.innerHTML = '<img src="images/male-magician.webp" alt="male-magician">';
+            }
+            if (maleRadio) {
+                maleRadio.checked = true;
+            }
+        } else if (parsedAccount.gender === 'female') {
+            const imgElement = characterDiv ? characterDiv.querySelector('img') : null;
+            if (imgElement) {
+                imgElement.src = 'images/female-magician.webp';
+                imgElement.alt = 'female-magician';
+            } else if (characterDiv) {
+                characterDiv.innerHTML = '<img src="images/female-magician.webp" alt="female-magician">';
+            }
+            if (femaleRadio) {
+                femaleRadio.checked = true;
+            }
+        } else {
+            const imgElement = characterDiv ? characterDiv.querySelector('img') : null;
+            if (imgElement) {
+                imgElement.src = 'images/magician-hat.webp';
+                imgElement.alt = 'choose-your-character';
+            } else if (characterDiv) {
+                characterDiv.innerHTML = '<img src="images/magician-hat.webp" alt="choose-your-character">';
+            }
+        }
+        updateTextContent('account-type', parsedAccount.accountType);
+        updateTextContent('user-name', parsedAccount.name, 'adventurer');
+        updateTextContent('account-email', parsedAccount.email);
+
+    }
+});
+
+/* individual and institution Btn */
+document.addEventListener('DOMContentLoaded', () => {
+    const individualAccountBtn = document.getElementById('IndividualAccount');
+    const institutionAccountBtn = document.getElementById('InstitutionAccount');
+    const maleRadioRadio = document.getElementById('male');
+    const institutionRadio = document.getElementById('institution');
+    const registrationFormHeader = document.getElementById('RegistrationForm');
+
+    function scrollToRegistrationForm() {
+        if (registrationFormHeader) {
+            const currentHash = window.location.hash;
+            window.location.hash = '';
+            window.location.hash = 'RegistrationForm';
+        }
+    }
+
+    if (individualAccountBtn) {
+        individualAccountBtn.addEventListener('click', () => {
+            document.querySelector('#Character').innerHTML = '';
+            document.querySelector('#Character').innerHTML = '<img src="images/male-magician.webp" alt="male-magician">';
+            if (maleRadioRadio) {
+                maleRadioRadio.checked = true;
+            }
+            if (registrationFormHeader) {
+                scrollToRegistrationForm();
+            }
+        });
+    }
+
+    if (institutionAccountBtn) {
+        institutionAccountBtn.addEventListener('click', () => {
+            document.querySelector('#Character').innerHTML = '';
+            document.querySelector('#Character').innerHTML = '<img src="images/institute.webp" alt="institute">';
+            if (institutionRadio) {
+                institutionRadio.checked = true;
+            }
+            if (registrationFormHeader) {
+                scrollToRegistrationForm();
+            }
+        });
     }
 });
 
@@ -568,7 +675,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedRoadmap = urlParams.get('roadmap');
     let currentRoadmap = javascriptRoadmap;
     const roadDivs = document.querySelectorAll('.selector .road');
+    const filterContainer = document.createElement('div');
+    filterContainer.classList.add('roadmap-filter');
 
+    const levels = ['beginner', 'intermediate', 'advanced'];
+
+    levels.forEach(level => {
+        const button = document.createElement('button');
+        button.textContent = `Show ${level.charAt(0).toUpperCase() + level.slice(1)} Level`;
+        button.addEventListener('click', () => filterRoadmapByLevel(currentRoadmap, level, roadMapContainer));
+        filterContainer.appendChild(button);
+    });
+
+    const selectorDiv = document.querySelector('.selector');
+    if (selectorDiv) {
+        selectorDiv.appendChild(filterContainer);
+    }
     if (selectedRoadmap) {
 
         const normalizedSelectedRoadmap = selectedRoadmap.toLowerCase().replace('-', ' ');
@@ -598,7 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'front-webdeveloper':
                 currentRoadmap = webDevRoadmap;
                 break;
-            case 'ia-for-beginner':
+            case 'ai-for-beginner':
                 currentRoadmap = aiForKidsRoadmap;
                 break
             default:
@@ -653,8 +775,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    function filterRoadmapByLevel(roadmapData, level, container) {
+        const filteredRoadmap = roadmapData.filter(section => section.level === level);
+        renderRoadmap(filteredRoadmap, container);
+        // Optionally, update URL to reflect the filter
+        const url = new URL(window.location.href);
+        url.searchParams.set('level', level);
+        window.history.pushState({}, '', url);
+    }
     renderRoadmap(currentRoadmap);
 });
+
 
 /* connector */
 

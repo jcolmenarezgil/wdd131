@@ -30,7 +30,7 @@
                 <li><a href="index.html">Home Page</a></li>
                 <li><a href="form.html">Registration</a></li>
                 <li><a href="roadmap.html">Roadmap</a></li>
-                <li><a href="challenges.html">Challenges</a></li>
+
             </ul>
         </nav>
         <div class="call-number">
@@ -43,11 +43,13 @@
             <h2>Spring Semester Start Offer</h2>
             <div>
                 <div class="timer"></div>
-                <a href="form.html"><button id="call-to-action">Enroll Now</button></a>
+                <a href="form.html">
+                    <div class="button" id="call-to-action">Enroll Now</div>
+                </a>
             </div>
         </section>
         <section class="invite-form">
-            <form class="box-shadow signup" action="form.html" method="get">
+            <form id="LetsStartedForm" class="box-shadow signup" action="#" method="get">
                 <h2>Registration Form</h2>
                 <fieldset>
                     <legend>
@@ -62,7 +64,8 @@
                         <label for="male">
                             <input type="radio" name="gender" id="male" value="male" required> Male
                         </label>
-                        <label for="female"> <input type="radio" name="gender" id="female" value="female" required> Female</label>
+                        <label for="female"> <input type="radio" name="gender" id="female" value="female" required>
+                            Female</label>
                     </div>
                     <div class="form-group flex-column">
                         <label for="name">Name</label>
@@ -81,7 +84,9 @@
             <div class="grid-container">
                 <div class="main-content">
                     <h2 class="highContrast">Welcome intrepid adventurer</h2>
-                    <p class="highContrast">Your adventure is just beginning, <b class="user-name">let's start by defining your name</b>, our web is magic, we will be able to remember not only your name, but also your learning progress.</p>
+                    <p class="highContrast">Your adventure is just beginning, <b class="user-name">let's start by
+                            defining your name</b>, our web is magic, we will be able to remember not only your name,
+                        but also your learning progress.</p>
                 </div>
 
                 <span class="sprite floating css_webp"></span>
@@ -97,7 +102,7 @@
 
         <section class="roadmap">
             <div class="heading">
-                <h2>Course map</h2>
+                <h2 id="CourseMap">Course map</h2>
                 <p>Choose wisely your next adventure.</p>
             </div>
             <div class="selector">
@@ -113,7 +118,7 @@
                         <div class="road">Python</div>
                     </li>
                     <li>
-                        <div class="road">IA for Beginner</div>
+                        <div class="road">Ai for Beginner</div>
                     </li>
                     <li>
                         <div class="road">Bugs hunter</div>
@@ -127,12 +132,13 @@
         </section>
 
         <section class="faq">
-            <h2>Frequently Asked Questions for Young Roadmap Wizards</h2>
+            <h2 id="FAQ">Frequently Asked Questions for Young Roadmap Wizards</h2>
 
             <div class="expand">
                 <details>
                     <summary>Can I save my progress?</summary>
-                    <p>Of course, <b class="user-name">young wizard</b>! Thanks to our dedicated arcane software, your progress will be recorded
+                    <p>Of course, <b class="user-name">young wizard</b>! Thanks to our dedicated arcane software, your
+                        progress will be recorded
                         in
                         the digital annals. You can pause your adventure at any time and return right where you left off
                         when you're ready to unleash new spells and continue your magical journey.</p>
@@ -195,7 +201,7 @@
 
             <div class="subscribe-tablet-control">
 
-                <h2>
+                <h2 id="Newsletter">
                     Subscribe to Our Newsletter
                 </h2>
                 <form class="news" method="get" action="form.html">
@@ -219,7 +225,57 @@
         </section>
 
     </main>
-    <footer></footer>
+    <footer>
+        <div class="footer-logo">
+            <div class="logotype">
+                <img src="images/code-magicians-academy-logo.png" alt="code-magicians-logo" loading="lazy">
+                <h3>Code Magicians Academy</h3>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com" title="Code Magicians Academy Instagram">
+                    <img class="rrss" src="images/instagram.png" alt="code-magicias-academy-instagram" loading="lazy">
+                </a>
+                <a href="https://www.youtube.com" title="Code Magicians Academy Youtube">
+                    <img class="rrss" src="images/youtube.png" alt="code-magicias-academy-youtube" loading="lazy">   
+                </a>
+                <a href="https://wa.me/584124653931" title="Code Magicians Academy Whatsapp">
+                    <img class="rrss" src="images/whatsapp.png" alt="code-magicias-academy-whatsapp" loading="lazy">
+                </a>
+                <a href="https://www.facebook.com" title="Code Magicians Academy Facebook">
+                    <img class="rrss" src="images/facebook.png" alt="code-magicias-academy-facebook" loading="lazy">
+                </a>
+            </div>
+        </div>
+        <div class="links">
+            <a href="/">Home</a>
+            <ul>
+                <li><a href="#CourseMap">Course Map</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+                <li><a href="#Newsletter">Newsletter</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <a href="form.html">Registration</a>
+            <ul>
+                <li><a href="form.html#RegistrationForm">Create Your Account</a></li>
+                <li><a href="form.html#AccountTypes">Account Types</a></li>
+                <li><a href="form.html#FAQAccounts">FAQ about accounts</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <a href="roadmap.html">Roadmap</a>
+            <ul>
+                <li><a href="roadmap.html?roadmap=front-webdeveloper">Front WebDeveloper</a></li>
+                <li><a href="roadmap.html?roadmap=javascript-fundamentals">Javascript Fundamentals</a></li>
+                <li><a href="roadmap.html?roadmap=python">Python</a></li>
+                <li><a href="roadmap.html?roadmap=ai-for-beginner">Ai for Beginner</a></li>
+                <li><a href="roadmap.html?roadmap=bugs-hunter">Bugs Hunter</a></li>
+            </ul>
+        </div>
+        <div class="author">
+            All Rights Reserved &copy; 2025 | Jose David Colmenarez Gil
+        </div>
+    </footer>
 </body>
 
 </html>

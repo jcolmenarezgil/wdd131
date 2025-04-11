@@ -30,7 +30,7 @@
                 <li><a href="index.html">Home Page</a></li>
                 <li><a href="form.html">Registration</a></li>
                 <li><a href="roadmap.html">Roadmap</a></li>
-                <li><a href="challenges.html">Challenges</a></li>
+
             </ul>
         </nav>
         <div class="call-number">
@@ -40,7 +40,7 @@
     </header>
     <main>
         <section>
-            <form class="signup complete-form" method="get" action="subcription.html">
+            <form id="RegistrationForm" class="signup complete-form" method="get" action="subscription.html">
                 <h2>Create Your Account</h2>
                 <fieldset>
                     <legend>
@@ -52,9 +52,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="male"><input type="radio" name="gender" id="male" required> Male </label>
-                        <label for="female"> <input type="radio" name="gender" id="female" required> Female</label>
-                        <label for="institution"><input type="radio" name="gender" id="institution" required>
+                        <label for="male">
+                            <input type="radio" name="gender" id="male" value="male" required> Male
+                        </label>
+                        <label for="female"> <input type="radio" name="gender" id="female" value="female" required>
+                            Female</label>
+                        <label for="institution">
+                            <input type="radio" name="gender" id="institution" required value="institution">
                             Institution </label>
                     </div>
                 </fieldset>
@@ -93,7 +97,7 @@
             </form>
         </section>
         <section class="table">
-            <h2>
+            <h2 id="AccountTypes">
                 Learn the differences between account types
             </h2>
             <div class="comparative">
@@ -130,38 +134,96 @@
                 <div class="value">Initiation: Up to 255 students/session</div>
                 <div></div>
                 <div class="btn-choice">
-                    <button>Choose Individual Account</button>
+                    <button id="IndividualAccount">Choose Individual Account</button>
                 </div>
                 <div class="btn-choice">
-                    <button>Choose Institution Account</button>
+                    <button id="InstitutionAccount">Choose Institution Account</button>
                 </div>
             </div>
         </section>
 
         <section class="faq">
             <section class="faq">
-                <h2>Frequently asked questions for choosing the type of account</h2>
+                <h2 id="FAQAccounts">Frequently asked questions for choosing the type of account</h2>
 
                 <div class="expand">
                     <details>
                         <summary>Can I convert my individual account into an institution account?</summary>
-                        <p>Of course, <b class="user-name">young wizard</b>! You can start with a personal account, learn, and who knows if you too will wish to train other young wizards during your learning journey. Knowledge and wisdom should be bestowed upon every adventurer who desires it. By doing so, you will also grow, and your magical power along with you.</p>
+                        <p>Of course, <b class="user-name">young wizard</b>! You can start with a personal account,
+                            learn, and who knows if you too will wish to train other young wizards during your learning
+                            journey. Knowledge and wisdom should be bestowed upon every adventurer who desires it. By
+                            doing so, you will also grow, and your magical power along with you.</p>
                     </details>
 
                     <details>
                         <summary>What happens if I want to join a school?</summary>
-                        <p>You stand before a grand community of wizards. A messenger owl will be sent to the institution you desire, and you will be given a name in their records. From there, you will be part of a great community of wizards and sorcerers eager to help you.</p>
+                        <p>You stand before a grand community of wizards. A messenger owl will be sent to the
+                            institution you desire, and you will be given a name in their records. From there, you will
+                            be part of a great community of wizards and sorcerers eager to help you.</p>
                     </details>
 
                     <details>
                         <summary>Will an individual account prevent me from obtaining certificates?</summary>
-                        <p>Absolutely not! Whether you are part of an institution account or an individual account, the holy grail will grant you the wisdom you need and a scroll with your name that demonstrates to the world the realms, scrolls, and oracles you have conquered. Do not fear, begin your journey today.</p>
+                        <p>Absolutely not! Whether you are part of an institution account or an individual account, the
+                            holy grail will grant you the wisdom you need and a scroll with your name that demonstrates
+                            to the world the realms, scrolls, and oracles you have conquered. Do not fear, begin your
+                            journey today.</p>
                     </details>
                 </div>
             </section>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="footer-logo">
+            <div class="logotype">
+                <img src="images/code-magicians-academy-logo.png" alt="code-magicians-logo" loading="lazy">
+                <h3>Code Magicians Academy</h3>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com" title="Code Magicians Academy Instagram">
+                    <img class="rrss" src="images/instagram.png" alt="code-magicias-academy-instagram" loading="lazy">
+                </a>
+                <a href="https://www.youtube.com" title="Code Magicians Academy Youtube">
+                    <img class="rrss" src="images/youtube.png" alt="code-magicias-academy-youtube" loading="lazy">
+                </a>
+                <a href="https://wa.me/584124653931" title="Code Magicians Academy Whatsapp">
+                    <img class="rrss" src="images/whatsapp.png" alt="code-magicias-academy-whatsapp" loading="lazy">
+                </a>
+                <a href="https://www.facebook.com" title="Code Magicians Academy Facebook">
+                    <img class="rrss" src="images/facebook.png" alt="code-magicias-academy-facebook" loading="lazy">
+                </a>
+            </div>
+        </div>
+        <div class="links">
+            <a href="/">Home</a>
+            <ul>
+                <li><a href="#CourseMap">Course Map</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+                <li><a href="#Newsletter">Newsletter</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <a href="form.html">Registration</a>
+            <ul>
+                <li><a href="form.html#RegistrationForm">Create Your Account</a></li>
+                <li><a href="form.html#AccountTypes">Account Types</a></li>
+                <li><a href="form.html#FAQAccounts">FAQ about accounts</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <a href="roadmap.html">Roadmap</a>
+            <ul>
+                <li><a href="roadmap.html?roadmap=front-webdeveloper">Front WebDeveloper</a></li>
+                <li><a href="roadmap.html?roadmap=javascript-fundamentals">Javascript Fundamentals</a></li>
+                <li><a href="roadmap.html?roadmap=python">Python</a></li>
+                <li><a href="roadmap.html?roadmap=ai-for-beginner">Ai for Beginner</a></li>
+                <li><a href="roadmap.html?roadmap=bugs-hunter">Bugs Hunter</a></li>
+            </ul>
+        </div>
+        <div class="author">
+            All Rights Reserved &copy; 2025 | Jose David Colmenarez Gil
+        </div>
+    </footer>
 </body>
 
 </html>
