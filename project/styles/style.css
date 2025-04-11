@@ -249,7 +249,7 @@ header {
 
 .logo-img {
     width: 68px;
-    height: auto;
+    height: 68px;
     order: 2;
 }
 
@@ -748,7 +748,7 @@ footer .logotype {
 
 footer img {
     max-width: 230px;
-    height: auto;
+    height: 230px;
 }
 
 footer ul li {
