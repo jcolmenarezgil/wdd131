@@ -1,6 +1,6 @@
 :root {
     --primary-color: #191970;
-    --secondary-color: #648de5;
+    --secondary-color: #113582;
     --highlighted: #ff9710;
     --border: #d3d0cb;
     --black-tone: #1e2019;
@@ -257,7 +257,11 @@ header {
     display: flex;
     order: 1;
     justify-content: flex-end;
-    padding: .55rem;
+    padding: .32rem;
+}
+
+.call-number a {
+    color: var(--black-tone) !important;
 }
 
 /* section */
@@ -410,6 +414,7 @@ header {
 
 .heading {
     padding: var(--padding-1);
+    color: var(--white-tone);
     background-color: var(--secondary-color);
     margin-bottom: 1rem;
     text-align: center;
@@ -483,15 +488,15 @@ header {
 }
 
 .path .points {
-    color: green;
+    color: #134713;
 }
 
 .path .beginner {
-    color: green;
+    color: #134713;
 }
 
 .path .intermediate {
-    color: #ff9710;
+    color: #2c1288;
 }
 
 .path .advanced {
@@ -690,7 +695,14 @@ form.news {
     margin: 0 auto;
 }
 
-.heading {
+.heading-subscription {
+    text-align: center;
+    color: var(--white-tone);
+    background-color: var(--secondary-color);
+    padding: var(--padding-1);
+}
+
+.subscription h3 {
     padding: var(--padding-1);
 }
 
