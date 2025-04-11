@@ -410,6 +410,11 @@ header {
     display: none;
 }
 
+.new-account h2 {
+    text-align: center;
+    padding: var(--padding-1);
+}
+
 /* section:roadmap */
 
 .heading {
