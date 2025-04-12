@@ -38,7 +38,7 @@ span,
 a,
 button,
 legend,
-input[type="text"] input[type="phone"],
+input[type="text"] input[type="tel"],
 label {
     font-family: var(--content);
     padding: 10px;
@@ -134,7 +134,7 @@ input[type="radio"] {
 
 form input[type="text"],
 form input[type="email"],
-form input[type="phone"] {
+form input[type="tel"] {
     font-size: var(--font-size-1);
     font-family: var(--content);
     border: 1px solid var(--gray-tone);
